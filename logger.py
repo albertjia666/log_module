@@ -35,34 +35,24 @@ class MyLogger(object):
             self.logger_f.addHandler(self.fh)
 
     def debug(self, message):
-        if self.ch.stream.name.__str__() == "<stdout>":
-            self.logger_c.debug(Fore.BLUE + "DEBUG - " + str(message) + Style.RESET_ALL)
-        if self.fh.stream.name.__str__() != "<stdout>":
-            self.logger_f.debug(str(message))
+        self.logger_c.debug(Fore.BLUE + "DEBUG - " + str(message) + Style.RESET_ALL)
+        self.logger_f.debug(str(message))
 
     def info(self, message):
-        if self.ch.stream.name.__str__() == "<stdout>":
-            self.logger_c.info(Fore.GREEN + "INFO - " + str(message) + Style.RESET_ALL)
-        if self.fh.stream.name.__str__() != "<stdout>":
-            self.logger_f.debug(str(message))
+        self.logger_c.info(Fore.GREEN + "INFO - " + str(message) + Style.RESET_ALL)
+        self.logger_f.debug(str(message))
 
     def warning(self, message):
-        if self.ch.stream.name.__str__() == "<stdout>":
-            self.logger_c.warning(Fore.YELLOW + "WARNING - " + str(message) + Style.RESET_ALL)
-        if self.fh.stream.name.__str__() != "<stdout>":
-            self.logger_f.debug(str(message))
+        self.logger_c.warning(Fore.YELLOW + "WARNING - " + str(message) + Style.RESET_ALL)
+        self.logger_f.debug(str(message))
 
     def error(self, message):
-        if self.ch.stream.name.__str__() == "<stdout>":
-            self.logger_c.error(Fore.LIGHTRED_EX + "ERROR - " + str(message) + Style.RESET_ALL)
-        if self.fh.stream.name.__str__() != "<stdout>":
-            self.logger_f.debug(str(message))
+        self.logger_c.error(Fore.LIGHTRED_EX + "ERROR - " + str(message) + Style.RESET_ALL)
+        self.logger_f.debug(str(message))
 
     def critical(self, message):
-        if self.ch.stream.name.__str__() == "<stdout>":
-            self.logger_c.critical(Fore.RED + "CRITICAL - " + str(message) + Style.RESET_ALL)
-        if self.fh.stream.name.__str__() != "<stdout>":
-            self.logger_f.debug(str(message))
+        self.logger_c.critical(Fore.RED + "CRITICAL - " + str(message) + Style.RESET_ALL)
+        self.logger_f.debug(str(message))
 
 
 if __name__ == '__main__':

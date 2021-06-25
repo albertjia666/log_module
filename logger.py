@@ -9,8 +9,8 @@ class MyLogger(object):
 
     def __init__(self, logger_c, logger_f, log_name):
 
-        self.logger_c = logging.getLogger(name=logger_c)
-        self.logger_c.setLevel(level=logging.DEBUG)
+        self.logger_c = logging.getLogger(name=logger_c) # 定义对应的程序模块名name，默认是root
+        self.logger_c.setLevel(level=logging.DEBUG) # 指定最低的日志级别 critical > error > warning > info > debug
 
         self.logger_f = logging.getLogger(name=logger_f)
         self.logger_f.setLevel(level=logging.DEBUG)
@@ -22,14 +22,14 @@ class MyLogger(object):
 
         if not self.logger_c.handlers:
 
-            self.ch = logging.StreamHandler(stream=sys.stdout)
-            self.ch.setLevel(level=logging.DEBUG)
+            self.ch = logging.StreamHandler(stream=sys.stdout) # 日志输出到屏幕控制台
+            self.ch.setLevel(level=logging.DEBUG) # 设置日志等级
             self.ch.setFormatter(fmt=formatter)
             self.logger_c.addHandler(self.ch)
 
         if not self.logger_f.handlers:
 
-            self.fh = logging.FileHandler(filename=log_name, encoding='utf-8')
+            self.fh = logging.FileHandler(filename=log_name, encoding='utf-8') 
             self.fh.setLevel(level=logging.DEBUG)
             self.fh.setFormatter(fmt=formatter)
             self.logger_f.addHandler(self.fh)

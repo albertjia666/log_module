@@ -18,18 +18,20 @@ class MyLogger(object):
         log_time = time.strftime("%Y-%m-%d:%H-%M-%S", time.localtime(time.time()))
         log_name = os.getcwd() + "/logs/" + log_name + ".log"
 
+        # 定义handler的输出格式
         formatter = logging.Formatter("%(asctime)s - %(filename)s[line:%(lineno)d] - %(name)s - %(message)s")
-
+        
+        # 这里进行判断，如果logger.handlers列表为空，则添加，否则，直接去写日志，解决重复打印的问题
         if not self.logger_c.handlers:
 
             self.ch = logging.StreamHandler(stream=sys.stdout) # 日志输出到屏幕控制台
             self.ch.setLevel(level=logging.DEBUG) # 设置日志等级
             self.ch.setFormatter(fmt=formatter)
-            self.logger_c.addHandler(self.ch)
+            self.logger_c.addHandler(self.ch) # 给logger添加handler
 
         if not self.logger_f.handlers:
 
-            self.fh = logging.FileHandler(filename=log_name, encoding='utf-8') 
+            self.fh = logging.FileHandler(filename=log_name, encoding='utf-8') # 日志写入文件
             self.fh.setLevel(level=logging.DEBUG)
             self.fh.setFormatter(fmt=formatter)
             self.logger_f.addHandler(self.fh)

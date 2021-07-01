@@ -67,4 +67,3 @@ if __name__ == '__main__':
     log.error("this is a test")
     log.critical("this is a test")
     
-# this is a pipeline test line

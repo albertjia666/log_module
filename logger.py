@@ -43,19 +43,19 @@ class MyLogger(object):
 
     def info(self, message):
         self.logger_c.info(Fore.GREEN + "INFO - " + str(message) + Style.RESET_ALL)
-        self.logger_f.debug(str(message))
+        self.logger_f.info(str(message))
 
     def warning(self, message):
         self.logger_c.warning(Fore.YELLOW + "WARNING - " + str(message) + Style.RESET_ALL)
-        self.logger_f.debug(str(message))
+        self.logger_f.warning(str(message))
 
     def error(self, message):
         self.logger_c.error(Fore.LIGHTRED_EX + "ERROR - " + str(message) + Style.RESET_ALL)
-        self.logger_f.debug(str(message))
+        self.logger_f.error(str(message))
 
     def critical(self, message):
         self.logger_c.critical(Fore.RED + "CRITICAL - " + str(message) + Style.RESET_ALL)
-        self.logger_f.debug(str(message))
+        self.logger_f.critical(str(message))
 
 
 if __name__ == '__main__':

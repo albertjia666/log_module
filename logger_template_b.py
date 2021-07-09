@@ -53,7 +53,7 @@ class Log(object):
 
 if __name__ == '__main__':
 
-    logger = Log(file_name=None, log_name='test.log').get_logger()  # 实例化日志类，调用get_logger方法
+    logger = Log(file_name=None, log_name='test.log').init_logger()  # 实例化日志类，调用get_logger方法
 
     logger.info('======[INFO TEST]======')
     logger.debug('======[DEBUG TEST]======')

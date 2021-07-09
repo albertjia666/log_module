@@ -1,4 +1,5 @@
 # log_module
-Custom log module
 
-pip3 install colorama
+# logger_template_a.py
+# logger_template_b.py
+# logger_template_c.py
